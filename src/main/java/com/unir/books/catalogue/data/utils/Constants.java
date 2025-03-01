@@ -1,4 +1,4 @@
-package com.unir.products.data.utils;
+package com.unir.books.catalogue.data.utils;
 
 public class Constants {
 

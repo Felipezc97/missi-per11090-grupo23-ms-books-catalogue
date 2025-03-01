@@ -1,14 +1,14 @@
-package com.unir.products.service;
+package com.unir.books.catalogue.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.fge.jsonpatch.JsonPatchException;
 import com.github.fge.jsonpatch.mergepatch.JsonMergePatch;
-import com.unir.products.controller.model.BookDto;
-import com.unir.products.controller.model.CreateBookRequest;
-import com.unir.products.data.BookRepository;
-import com.unir.products.data.model.Book;
+import com.unir.books.catalogue.controller.model.BookDto;
+import com.unir.books.catalogue.controller.model.CreateBookRequest;
+import com.unir.books.catalogue.data.BookRepository;
+import com.unir.books.catalogue.data.model.Book;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,14 +42,14 @@ public class BooksCatalogueServiceImpl implements BooksCatalogueService {
     }
 
     @Override
-    public Book getBook(String productId) {
-        return repository.getBookById(Long.valueOf(productId));
+    public Book getBook(String bookId) {
+        return repository.getBookById(Long.valueOf(bookId));
     }
 
     @Override
-    public Boolean removeBook(String productId) {
+    public Boolean removeBook(String bookId) {
 
-        Book book = repository.getBookById(Long.valueOf(productId));
+        Book book = repository.getBookById(Long.valueOf(bookId));
 
         if (book != null) {
             repository.delete(book);

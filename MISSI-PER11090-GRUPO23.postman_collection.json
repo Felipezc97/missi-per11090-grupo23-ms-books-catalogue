@@ -1,0 +1,366 @@
+{
+	"info": {
+		"_postman_id": "8939e997-a4cb-4448-86de-f5d9d47f5429",
+		"name": "MISSI-PER11090-GRUPO23",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15350855",
+		"_collection_link": "https://martian-resonance-668313.postman.co/workspace/My-Workspace~2204c544-e698-456f-8cad-f4ab14984111/collection/15350855-8939e997-a4cb-4448-86de-f5d9d47f5429?action=share&source=collection_link&creator=15350855"
+	},
+	"item": [
+		{
+			"name": "Microservicios - DWFS",
+			"item": [
+				{
+					"name": "Consultar pagos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"targetMethod\": \"GET\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8762/ms-books-payments/payments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"ms-books-payments",
+								"payments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear pago",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"targetMethod\": \"POST\",\r\n    \"body\": {\r\n        \"date\": \"2025-02-07\",\r\n        \"status\": \"CANCELADO\",\r\n        \"method\": \"TARJETA\",\r\n        \"totalAmount\": 200.00,\r\n        \"books\": [\r\n            \"1\",\r\n            \"4\"\r\n        ]\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8762/ms-books-payments/payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"ms-books-payments",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar libro parcialmente",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"targetMethod\": \"PATCH\",\r\n    \"body\": {\r\n        \"category\": \"Ciencia Ficcion 123\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8762/ms-books-catalogue/books/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"ms-books-catalogue",
+								"books",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar libro completo",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"targetMethod\": \"PUT\",\r\n    \"body\": {\r\n        \"title\": \"Nuevo titulo\",\r\n        \"author\": \"Juan Perez\",\r\n        \"published\": \"2025-02-07\",\r\n        \"category\": \"Ciencia Ficcion\",\r\n        \"isbn\": \"123-2312-231231-12312321\",\r\n        \"rating\": 4,\r\n        \"price\": 32.50,\r\n        \"stock\": 50,\r\n        \"visible\": true\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8762/ms-books-catalogue/books/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"ms-books-catalogue",
+								"books",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar todos los libros",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"targetMethod\": \"GET\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8762/ms-books-catalogue/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"ms-books-catalogue",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar libro por ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"targetMethod\": \"GET\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8762/ms-books-catalogue/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"ms-books-catalogue",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear libro",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"targetMethod\": \"POST\",\r\n    \"body\": {\r\n        \"title\": \"Libro nuevo 2\",\r\n        \"author\": \"Grupo 19\",\r\n        \"published\": \"2025-02-07\",\r\n        \"category\": \"Desarrollo Web\",\r\n        \"isbn\": \"123-2312-231231-12312321\",\r\n        \"rating\": 4,\r\n        \"price\": 50.00,\r\n        \"stock\": 20,\r\n        \"visible\": true\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8762/ms-books-catalogue/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"ms-books-catalogue",
+								"books"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API-REST - Plataformas",
+			"item": [
+				{
+					"name": "Get All Authors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://personal-iye5qta5.outsystemscloud.com/RelatosdePapel/rest/v1/get-authors",
+							"protocol": "https",
+							"host": [
+								"personal-iye5qta5",
+								"outsystemscloud",
+								"com"
+							],
+							"path": [
+								"RelatosdePapel",
+								"rest",
+								"v1",
+								"get-authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Author by Id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get Book by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://personal-iye5qta5.outsystemscloud.com/RelatosdePapel/rest/v1/get-book-by-id?idLibro=9",
+							"protocol": "https",
+							"host": [
+								"personal-iye5qta5",
+								"outsystemscloud",
+								"com"
+							],
+							"path": [
+								"RelatosdePapel",
+								"rest",
+								"v1",
+								"get-book-by-id"
+							],
+							"query": [
+								{
+									"key": "idLibro",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Author by Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://personal-iye5qta5.outsystemscloud.com/RelatosdePapel/rest/v1/get-author-by-name?nameAuthor=J",
+							"protocol": "https",
+							"host": [
+								"personal-iye5qta5",
+								"outsystemscloud",
+								"com"
+							],
+							"path": [
+								"RelatosdePapel",
+								"rest",
+								"v1",
+								"get-author-by-name"
+							],
+							"query": [
+								{
+									"key": "nameAuthor",
+									"value": "J"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": 10,\r\n    \"codigo\": \"libro009\",\r\n    \"titulo\": \"Prueba de libro\",\r\n    \"resumen\": \"askdaskdaklsn skdasjdaksjdkaljsda\",\r\n    \"fechaPublicacion\": \"\",\r\n    \"precio\": 24.58,\r\n    \"valoracion\": 4.00,\r\n    \"portada\": \"https://upload.wikimedia.org/wikipedia/commons/a/a3/DickseeRomeoandJuliet.jpg\",\r\n    \"autor\": 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://personal-iye5qta5.outsystemscloud.com/RelatosdePapel/rest/v1/create-book",
+							"protocol": "https",
+							"host": [
+								"personal-iye5qta5",
+								"outsystemscloud",
+								"com"
+							],
+							"path": [
+								"RelatosdePapel",
+								"rest",
+								"v1",
+								"create-book"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -7,10 +7,10 @@
 		<version>3.4.1</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.unir</groupId>
-	<artifactId>books-catalogue</artifactId>
+	<groupId>com.unir.books.catalogue</groupId>
+	<artifactId>books-catalogue-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>products</name>
+	<name>ms-books-catalogue</name>
 	<description>Aplicacion que permite acceder y gestionar la base de datos de libros</description>
 	<properties>
 		<java.version>21</java.version>

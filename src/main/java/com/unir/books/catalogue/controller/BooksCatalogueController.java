@@ -1,9 +1,9 @@
-package com.unir.products.controller;
+package com.unir.books.catalogue.controller;
 
-import com.unir.products.controller.model.BookDto;
-import com.unir.products.controller.model.CreateBookRequest;
-import com.unir.products.data.model.Book;
-import com.unir.products.service.BooksCatalogueService;
+import com.unir.books.catalogue.controller.model.BookDto;
+import com.unir.books.catalogue.controller.model.CreateBookRequest;
+import com.unir.books.catalogue.data.model.Book;
+import com.unir.books.catalogue.service.BooksCatalogueService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -37,7 +37,7 @@ public class BooksCatalogueController {
     @ApiResponse(
             responseCode = "200",
             content = @Content(mediaType = "application/json", schema = @Schema(implementation = Book.class)))
-    public ResponseEntity<List<Book>> getProducts(
+    public ResponseEntity<List<Book>> getBooks(
             @RequestHeader Map<String, String> headers,
             @Parameter(name = "title", description = "Titulo del libro. No debe ser exacto", example = "Harry Potter", required = false)
             @RequestParam(required = false) String title,
@@ -135,7 +135,7 @@ public class BooksCatalogueController {
             responseCode = "404",
             content = @Content(mediaType = "application/json", schema = @Schema(implementation = Void.class)),
             description = "No se ha encontrado el libro con el identificador indicado.")
-    public ResponseEntity<Book> addProduct(@RequestBody CreateBookRequest request) {
+    public ResponseEntity<Book> addBook(@RequestBody CreateBookRequest request) {
 
         Book createdBook = service.createBook(request);
 
@@ -151,7 +151,7 @@ public class BooksCatalogueController {
     @Operation(
             operationId = "Modificar parcialmente un libro",
             description = "RFC 7386. Operacion de escritura",
-            summary = "RFC 7386. Se modifica parcialmente un producto.",
+            summary = "RFC 7386. Se modifica parcialmente un libro.",
             requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
                     description = "Datos del libro a modificar.",
                     required = true,
@@ -163,7 +163,7 @@ public class BooksCatalogueController {
             responseCode = "400",
             content = @Content(mediaType = "application/json", schema = @Schema(implementation = Void.class)),
             description = "Libro invalido o datos incorrectos introducidos.")
-    public ResponseEntity<Book> patchProduct(@PathVariable String bookId, @RequestBody String patchBody) {
+    public ResponseEntity<Book> patchBook(@PathVariable String bookId, @RequestBody String patchBody) {
 
         Book patched = service.updateBook(bookId, patchBody);
         if (patched != null) {

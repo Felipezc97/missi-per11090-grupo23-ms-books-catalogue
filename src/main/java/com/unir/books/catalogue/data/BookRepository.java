@@ -1,10 +1,10 @@
-package com.unir.products.data;
+package com.unir.books.catalogue.data;
 
-import com.unir.products.data.model.Book;
-import com.unir.products.data.utils.Constants;
-import com.unir.products.data.utils.SearchCriteria;
-import com.unir.products.data.utils.SearchOperation;
-import com.unir.products.data.utils.SearchStatement;
+import com.unir.books.catalogue.data.model.Book;
+import com.unir.books.catalogue.data.utils.Constants;
+import com.unir.books.catalogue.data.utils.SearchCriteria;
+import com.unir.books.catalogue.data.utils.SearchOperation;
+import com.unir.books.catalogue.data.utils.SearchStatement;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Repository;

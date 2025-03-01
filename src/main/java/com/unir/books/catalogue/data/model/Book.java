@@ -1,7 +1,7 @@
-package com.unir.products.data.model;
+package com.unir.books.catalogue.data.model;
 
-import com.unir.products.controller.model.BookDto;
-import com.unir.products.data.utils.Constants;
+import com.unir.books.catalogue.controller.model.BookDto;
+import com.unir.books.catalogue.data.utils.Constants;
 import jakarta.persistence.*;
 import lombok.*;
 
